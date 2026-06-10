@@ -1,0 +1,305 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: "Geist Variable", sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  .maplibregl-popup-anchor-top .maplibregl-popup-tip,
+  .maplibregl-popup-anchor-top-left .maplibregl-popup-tip,
+  .maplibregl-popup-anchor-top-right .maplibregl-popup-tip {
+    border-bottom-color: var(--popover) !important;
+  }
+
+  .maplibregl-popup-anchor-bottom .maplibregl-popup-tip,
+  .maplibregl-popup-anchor-bottom-left .maplibregl-popup-tip,
+  .maplibregl-popup-anchor-bottom-right .maplibregl-popup-tip {
+    border-top-color: var(--popover) !important;
+  }
+
+  .maplibregl-popup-anchor-left .maplibregl-popup-tip {
+    border-right-color: var(--popover) !important;
+  }
+
+  .maplibregl-popup-anchor-right .maplibregl-popup-tip {
+    border-left-color: var(--popover) !important;
+  }
+
+  .maplibregl-popup-content {
+    background: var(--popover) !important;
+    color: var(--popover-foreground) !important;
+    padding: 0 !important;
+    border: 1px solid color-mix(in srgb, var(--border) 82%, transparent);
+    border-radius: 0.75rem;
+    box-shadow: 0 18px 48px rgb(0 0 0 / 28%);
+  }
+
+  .maplibregl-popup-close-button {
+    width: 2rem !important;
+    height: 2rem !important;
+    display: grid !important;
+    place-items: center !important;
+    color: var(--muted-foreground) !important;
+  }
+
+  .maplibregl-popup-close-button:hover {
+    color: var(--foreground) !important;
+    background: transparent !important;
+  }
+
+  .graph-debug-popup {
+    min-width: 17rem;
+    max-width: min(28rem, calc(100vw - 1rem));
+    max-height: min(80vh, calc(100vh - 1rem));
+    overflow: auto;
+    padding: 0.45rem 0.7rem 0.55rem;
+  }
+
+  .graph-debug-popup__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.6875rem;
+    line-height: 1.2;
+  }
+
+  .graph-debug-popup__table tr {
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 82%, transparent);
+  }
+
+  .graph-debug-popup__table tr:last-child {
+    border-bottom: 0;
+  }
+
+  .graph-debug-popup__table th,
+  .graph-debug-popup__table td {
+    padding: 0.18rem 0;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  .graph-debug-popup__table th {
+    width: 7.75rem;
+    padding-right: 0.65rem;
+    font-weight: 600;
+    color: var(--muted-foreground);
+  }
+
+  .graph-debug-popup__table td {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .graph-debug-popup__table a {
+    color: color-mix(in srgb, var(--foreground) 72%, #2563eb);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  .graph-debug-popup__empty {
+    color: var(--muted-foreground);
+  }
+
+  .graph-debug-popup__restrictions {
+    display: grid;
+    gap: 0.28rem;
+  }
+
+  .graph-debug-popup__restriction {
+    display: grid;
+    gap: 0.08rem;
+    padding-left: 0.55rem;
+    border-left: 2px solid color-mix(in srgb, var(--border) 82%, transparent);
+  }
+
+  .graph-debug-popup__restriction-main {
+    font-family:
+      ui-monospace,
+      SFMono-Regular,
+      Menlo,
+      Monaco,
+      Consolas,
+      Liberation Mono,
+      Courier New,
+      monospace;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .graph-debug-popup__restriction-condition {
+    color: var(--muted-foreground);
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .graph-debug-popup__boolean--true {
+    color: #22c55e;
+    font-weight: 600;
+  }
+
+  .graph-debug-popup__boolean--false {
+    color: #ef4444;
+    font-weight: 600;
+  }
+
+  .hgv-marker-host {
+    cursor: grab;
+  }
+
+  .hgv-marker-host:active {
+    cursor: grabbing;
+  }
+
+  .hgv-marker {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    display: grid;
+    place-items: center;
+    border: 2px solid white;
+    border-radius: 9999px 9999px 9999px 0;
+    background: var(--marker-color);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 45%);
+    color: white;
+    transform: rotate(-45deg);
+  }
+
+  .hgv-marker span {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    transform: rotate(45deg);
+  }
+}
