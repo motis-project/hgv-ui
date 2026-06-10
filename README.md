@@ -43,3 +43,15 @@ http://localhost:5173/?motis=http://localhost:8080
 ```
 
 If Vite uses a different port, keep that port in the browser URL and only change the `motis` value. Without this parameter, the UI uses the current origin as the MOTIS API base URL, which usually only works when the UI is served by the MOTIS backend itself.
+
+## Map
+
+Click the bug icon and zoom in to enable the debug overlay.
+
+- Ways with HGV specific attributes are shown in blue.
+- Ways with conditional restrictions have a yellow glow.
+- Ways that have hazmat restrictions are shown with a small hazmat icon.
+
+Click on ways to show their properties.
+
+For routing, the A (from) / B (to) pins can be dragged.
