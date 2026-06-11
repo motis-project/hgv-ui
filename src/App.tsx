@@ -181,7 +181,8 @@ function resolveMotisBase() {
   const motisParam = params.get("motis");
 
   if (!motisParam) {
-    return "http://localhost:8080";
+    const origin = window.location.origin;
+    return origin.endsWith("/") ? origin.slice(0, -1) : origin;
   }
 
   const defaultProtocol = window.location.protocol;
