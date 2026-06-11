@@ -208,7 +208,8 @@ function apiBaseWithSlash() {
 }
 
 function staticBaseForStyle() {
-  return `${window.location.origin}${window.location.pathname}`;
+  const base = `${window.location.origin}${window.location.pathname}`;
+  return base.endsWith("/") ? base : `${base}/`;
 }
 
 function getSystemThemeSnapshot(): Theme {
